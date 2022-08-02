@@ -5,14 +5,7 @@ console.log('***** Cart Functions *****');
 let basket = [];
 const maxItems = 5;
 
-// Added 'isFull' and 'maxItems' to the beginning so they can be recognized by 'addItem' and 'isFull' respectively.
-function isFull(array) {
-    if (array.length < maxItems) {
-        return false;
-    } else if (array.length >= maxItems) {
-        return true;
-    }
-}
+// Moved 'maxItems' to the beginning so it can be recognized by functions.
 
 function addItem(item) {
     if (isFull(basket)) {
@@ -48,6 +41,14 @@ function empty() {
     }  
 }
 empty();
+
+function isFull(array) {
+    if (array.length < maxItems) {
+        return false;
+    } else if (array.length >= maxItems) {
+        return true;
+    }
+}
 
 console.log(addItem("apples"), addItem("cherries"), addItem("beats"), addItem("peppers"), addItem("strawberries"));
 isFull(basket) ? console.log("Your basket is full!") : console.log("There's still room for more");
