@@ -5,7 +5,6 @@ console.log('***** Cart Functions *****');
 let basket = [];
 const maxItems = 5;
 
-// Moved 'maxItems' to the beginning so it can be recognized by functions.
 
 function addItem(item) {
     if (isFull(basket)) {
@@ -24,14 +23,16 @@ function addItem(item) {
         }
     }
 }
-// Console log necessary for 'true'/'false' to be logged?
+console.log("*** Adding pears, broccoli, and asparagus to basket. Expecting all to successfully enter into the array and return true ***")
 console.log(addItem("pears"), addItem("broccoli"), addItem("asparagus"));
 
 function listItems() {
+    console.log("The following items are in your basket:");
     for (let i = 0; i < basket.length; i++) {
         console.log(`${basket[i]}\n`)
     }
 }
+console.log("*** Expecting pears, broccoli, and asparagus to list on separate lines below ***")
 listItems();
 
 function empty() {
@@ -42,6 +43,7 @@ function empty() {
         console.log("Error emptying basket");
     }  
 }
+console.log("*** Expecting empty() to return 'Basket is now empty' ***")
 empty();
 
 function isFull(array) {
@@ -51,7 +53,7 @@ function isFull(array) {
         return true;
     }
 }
-
+console.log("*** Adding apples, cherries, beats, peppers, strawberries, and grapes to basket\n Expecting all to be successfully added and return true except for grapes which should return false ***")
 console.log(addItem("apples"), addItem("cherries"), addItem("beats"), addItem("peppers"), addItem("strawberries"), addItem("grapes"));
 
 function removeItem(item) {
@@ -63,6 +65,8 @@ function removeItem(item) {
         return item;
     }
 }
-
+console.log("*** Expecting 'beats' to be removed from basket ***")
 console.log(`${removeItem("beats")} was removed. Basket now contains ${basket.join(", ")}`);
-isFull(basket) ? console.log("Your basket is full!") : console.log("There's room for more!");
+
+console.log("*** Expecting basket to no longer be full ***")
+isFull(basket) ? console.log("Your basket is full, time to check out!") : console.log("There's room for more!");
